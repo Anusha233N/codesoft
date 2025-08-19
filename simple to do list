@@ -1,0 +1,41 @@
+tasks=[]
+def show_menu():
+print("1.view tasks")
+print("2.add task")
+print("3.remove task")
+print("4.exit")
+
+while true:
+show_menu()
+choice=input("enter your choice (1-4):")
+if choice=="1":
+if no tasks:
+print("\nNo tasks:")
+for i,task in enumerate(tasks,1):
+print(f"{i}.{task}")
+
+elif choice=="2":
+task=input("\nenter a new task:")
+tasks.append(task)
+print("task added!")
+
+elif choice=="3":
+if not tasks:
+print("\n no tasks to remove.")
+else:
+for i,task in enumerate(tasks,1):
+print(f"{i},{task}")
+try:
+task_num=int(input("enter task number to remove:"))
+removed=tasks.pop(task_num-1)
+print(f"removed:{removed}")
+except (valueerror,indexerror):
+print("invalid task number.")
+
+elif choice=="4":
+print("exiting...goodbye!")
+break
+
+else:
+print("invalid choice,please try again.")
+
